@@ -1,0 +1,27 @@
+.budget-tracker {
+  border-collapse: collapse;
+  min-width: 750px;
+}
+
+.budget-tracker * {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.budget-tracker th {
+  text-align: left;
+  padding: 10px 20px;
+  border-bottom: 2px solid #009578;
+}
+
+.budget-tracker td {
+  padding: 5px;
+}
+
+.input,
+.delete-entry {
+  height: 30px;
+  font-size: 13px;
+  padding: 0 10px;
+  margin: 0;
+  box-sizing: border-box;
+}
