@@ -1,16 +1,16 @@
 export default class BudgetTracker {
-  constructor(querySelectorString) {
-    this.root = document.querySelector(querySelectorString);
-    this.root.innerHtml = BudgetTracker.html();
+  constructor (querySelectorString) {
+    this.root = document.querySelector(querySelectorString)
+    this.root.innerHtml = BudgetTracker.html()
 
-    this.root.querySelector(".new-entry").addEventListener("click", () => {
-      this.onNewEntryBtnClick();
-    });
+    this.root.querySelector('.new-entry').addEventListener('click', () => {
+      this.onNewEntryBtnClick()
+    })
     // Load initial data from Local Storage
-    this.load();
+    this.load()
   }
 
-  static html() {
+  static html () {
     return `
         <table class="budget-tracker">
             <thead>
@@ -39,11 +39,11 @@ export default class BudgetTracker {
                 </tr>
             </tfoot>
         </table>
-        `;
+        `
   }
 
-  static entryHtml() {
-      return `
+  static entryHtml () {
+    return `
       <tr>
         <td>
             <input class="input input-date" type="date" />
@@ -68,18 +68,32 @@ export default class BudgetTracker {
             <button type="button" class="delete-entry">&#10005;</button>
         </td>
     </tr>
-      `;
+      `
   }
-  load() {}
+  load (){
 
-  updateSummary() {}
-  save() {}
+}
 
-  addEntry(entry = {}) {}
+  updateSummary () {
 
-  getEntryRows() {}
+  }
+  save () {
 
-  onNewEntryBtnClick() {}
+  }
 
-  onDeleteEntryBtnclick() {}
+  addEntry (entry = {}) {
+
+  }
+
+  getEntryRows () {
+
+  }
+
+  onNewEntryBtnClick () {
+
+  }
+
+  onDeleteEntryBtnclick () {
+
+  }
 }
