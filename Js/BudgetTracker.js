@@ -70,6 +70,7 @@ export default class BudgetTracker {
     </tr>
       `
   }
+
   load () {
 
   }
@@ -77,6 +78,7 @@ export default class BudgetTracker {
   updateSummary () {
 
   }
+
   save () {
 
   }
