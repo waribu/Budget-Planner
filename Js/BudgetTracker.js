@@ -70,9 +70,9 @@ export default class BudgetTracker {
     </tr>
       `
   }
-  load (){
+  load () {
 
-}
+  }
 
   updateSummary () {
 
