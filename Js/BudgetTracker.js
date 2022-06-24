@@ -65,17 +65,31 @@ export default class BudgetTracker {
       `;
   }
 
-  load() {}
+  load() {
+    const entries = JSON.parse(
+      localStorage.getItem("budget-tracker-entries-dev") || "[]"
+    );
+    for (const entry of entries) {
+      this.addEntry(entry);
+    }
+    this.updateSummary();
+  }
 
   updateSummary() {}
 
   save() {}
 
-  addEntry(entry = {}) {}
+  addEntry(entry = {}) {
+    this.root
+      .querySelector(".entries")
+      .insertAdjacentHTML("beforeend", BudgetTracker.entryHtml());
+  }
 
   getEntryRows() {}
 
-  onNewEntryBtnClick() {}
+  onNewEntryBtnClick() {
+    this.addEntry();
+  }
 
-  onDeleteEntryBtnclick(e) {}
+  onDeleteEntryBtnclick() {}
 }
