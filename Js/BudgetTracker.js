@@ -1,16 +1,10 @@
 export default class BudgetTracker {
-  constructor (querySelectorString) {
-    this.root = document.querySelector(querySelectorString)
-    this.root.innerHtml = BudgetTracker.html()
-
-    this.root.querySelector('.new-entry').addEventListener('click', () => {
-      this.onNewEntryBtnClick()
-    })
-    // Load initial data from Local Storage
-    this.load()
+  constructor(querySelectorString) {
+    this.root = document.querySelector(querySelectorString);
+    this.root.innerHTML = BudgetTracker.html();
   }
 
-  static html () {
+  static html() {
     return `
         <table class="budget-tracker">
             <thead>
@@ -25,8 +19,8 @@ export default class BudgetTracker {
             <tbody class="entries"></tbody>
             <tbody>
                 <tr>
-                    <td colspan="5">
-                    <button type="button" class="new entry">New Entry</button>
+                    <td colspan="5" class="controls">
+                    <button type="button" class="new-entry">New Entry</button>
                     </td>
                 </tr>
             </tbody>
@@ -34,15 +28,15 @@ export default class BudgetTracker {
                 <tr>
                     <td colspan="5" class="summary">
                     <strong>Total:</strong>
-                    <span class="total">$0.00</span>
+                    <span class="total">kshs 0.00</span>
                     </td>
                 </tr>
             </tfoot>
         </table>
-        `
+        `;
   }
 
-  static entryHtml () {
+  static entryHtml() {
     return `
       <tr>
         <td>
@@ -68,34 +62,20 @@ export default class BudgetTracker {
             <button type="button" class="delete-entry">&#10005;</button>
         </td>
     </tr>
-      `
+      `;
   }
 
-  load () {
+  load() {}
 
-  }
+  updateSummary() {}
 
-  updateSummary () {
+  save() {}
 
-  }
+  addEntry(entry = {}) {}
 
-  save () {
+  getEntryRows() {}
 
-  }
+  onNewEntryBtnClick() {}
 
-  addEntry (entry = {}) {
-
-  }
-
-  getEntryRows () {
-
-  }
-
-  onNewEntryBtnClick () {
-
-  }
-
-  onDeleteEntryBtnclick () {
-
-  }
+  onDeleteEntryBtnclick(e) {}
 }
