@@ -7,9 +7,8 @@ export default class BudgetTracker {
       this.onNewEntryBtnClick();
     });
 
-    // Load initial data from local storage 
-      this.load();
-
+    // Load initial data from local storage
+    this.load();
   }
 
   static html() {
@@ -75,7 +74,7 @@ export default class BudgetTracker {
 
   load() {
     const entries = JSON.parse(
-      localStorage.getItem("budget-tracker-entries-dev") || "[]"
+      localStorage.getItem("budget-tracker-entries") || "[]"
     );
     for (const entry of entries) {
       this.addEntry(entry);
@@ -88,9 +87,13 @@ export default class BudgetTracker {
   save() {}
 
   addEntry(entry = {}) {
-    this.root
+        this.root
       .querySelector(".entries")
       .insertAdjacentHTML("beforeend", BudgetTracker.entryHtml());
+
+      const row = this.root.querySelector(".entries tr:last-of-type");
+      
+      row.querySelector(".input-date").value = entry.date || new Date().toISOString().replace(/T.*/, "");
   }
 
   getEntryRows() {}
